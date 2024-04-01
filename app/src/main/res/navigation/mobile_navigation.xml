@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_splash">
+
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.example.uts_pam.ui.splash_screen.SplashScreenFragment"
+        android:label="Splash_screen"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_navigation_splash_to_home"
+            app:destination="@id/navigation_home"/>
+        <action
+            android:id="@+id/action_navigation_splash_to_login"
+            app:destination="@id/navigation_login"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.uts_pam.ui.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_navigation_login_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"/>
+        <action
+            android:id="@+id/action_navigation_login_to_register"
+            app:destination="@id/navigation_register"
+            app:popUpTo="@id/navigation_login"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.example.uts_pam.ui.register.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_navigation_register_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.uts_pam.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.uts_pam.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
